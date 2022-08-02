@@ -1,0 +1,24 @@
+--------------------------------------------------------
+--  File created - Tuesday-August-02-2022   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table MOVIEACTOR
+--------------------------------------------------------
+
+  CREATE TABLE "SYSTEM"."MOVIEACTOR" 
+   (	"MOVIEID" NUMBER(*,0), 
+	"ACTORID" NUMBER(*,0)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  Ref Constraints for Table MOVIEACTOR
+--------------------------------------------------------
+
+  ALTER TABLE "SYSTEM"."MOVIEACTOR" ADD CONSTRAINT "MOVIEACTOR_FK1" FOREIGN KEY ("MOVIEID")
+	  REFERENCES "SYSTEM"."MOVIES" ("MOVIEID") ENABLE;
+  ALTER TABLE "SYSTEM"."MOVIEACTOR" ADD CONSTRAINT "MOVIEACTOR_FK2" FOREIGN KEY ("ACTORID")
+	  REFERENCES "SYSTEM"."ACTORS" ("ACTORID") ENABLE;
